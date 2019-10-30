@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 class Editor extends React.Component {
@@ -15,6 +16,10 @@ class Editor extends React.Component {
                     <label>Mensaje</label>
                         <input type='text-area' placeholder='¿Por qué ha sido un buen dia?' />
                         <input type='submit' />
+                        <Link to='/'>
+                            <input type='button' value="Cancelar"/>
+                        </Link>
+                        
                 </fieldset>
             </div>
         )
