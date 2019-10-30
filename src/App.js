@@ -18,6 +18,13 @@ class App extends React.Component {
     this.state = {
       smileys: smileys,
     }
+    this.handleAddStatus=this.handleAddStatus.bind(this)
+  }
+
+  handleAddStatus(item) {
+    this.setState({
+      smileys: [...this.state.smileys, item]
+    })
   }
 
   render() {
@@ -30,7 +37,9 @@ class App extends React.Component {
         <Home
           smileys={smileys}
         />
-        <Editor />
+        <Editor 
+        handleAddStatus={this.handleAddStatus}
+        />
 
       </div>
     );

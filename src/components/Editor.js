@@ -11,15 +11,20 @@ class Editor extends React.Component {
             message:''
           }
         this.handleInput = this.handleInput.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     handleInput(event) {
-        // const { value, name } = event.target;
         const value = event.currentTarget.value;
         const name = event.currentTarget.name;
         this.setState({
             [name]: value
         })
+    }
+
+    handleSubmit(event) {
+        event.preventDefault();
+        this.props.handleAddStatus(this.state)
     }
 
 
@@ -36,7 +41,7 @@ class Editor extends React.Component {
                         <input type='checkbox' name='status' value='triste' onChange={this.handleInput} /> :(
                     <label>Mensaje</label>
                         <input type='text-area' name='message' placeholder='¿Por qué ha sido un buen dia?' onChange={this.handleInput} />
-                        <button className='input_submit' type='submit'>Añadir</button>
+                        <button className='input_submit' type='submit' onClick={this.handleSubmit}>Añadir</button>
                         <Link to='/'>
                             <input type='button' value="Cancelar" />
                         </Link>
