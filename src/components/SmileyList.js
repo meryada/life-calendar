@@ -13,7 +13,7 @@ class CalendarSmiley extends React.Component {
                     return (
                         <li key={index}>
                         <p>{item.date}</p>    
-                        <p>{item.status === 'feliz'? <i className="far fa-smile-beam"></i>:<i className="far fa-frown-open"></i>?item.status === null:<p></p>}</p>
+                        <p>{item.status === 'feliz'? <i className="far fa-smile-beam"></i>:<i className="far fa-frown-open"></i>}</p>
                         <p>{item.message}</p>
                         </li>
                     )
