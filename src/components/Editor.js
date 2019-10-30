@@ -8,38 +8,18 @@ class Editor extends React.Component {
         this.state = {
             date: '',
             status: '',
-        }
-        this.handleDate = this.handleDate.bind(this)
-        this.handleState = this.handleState.bind(this)
-        // this.handleMessage=this.handleMessage.bind(this)
-        this.handleSubmit = this.handleSubmit.bind(this)
+            message:''
+          }
+        this.handleInput = this.handleInput.bind(this)
     }
 
-    handleDate(event) {
-        const newDate = event.currentTarget.value;
+    handleInput(event) {
+        // const { value, name } = event.target;
+        const value = event.currentTarget.value;
+        const name = event.currentTarget.name;
         this.setState({
-            date: newDate
+            [name]: value
         })
-    }
-    handleState(event) {
-        const newStatus = event.currentTarget.value;
-        console.log(newStatus)
-        this.setState({
-            status: newStatus
-        })
-    }
-    // handleMessage(event) {
-    //     const newMessage = event.currentTarget.value;
-    //     console.log( newMessage)
-    // }
-
-    handleSubmit(event) {
-        event.preventDefault();
-        this.props.handleAddSmiley(this.state)
-    }
-
-    handleAddWish() {
-        
     }
 
 
@@ -48,14 +28,14 @@ class Editor extends React.Component {
             <div>
                 <h1>soy editor</h1>
                 <fieldset>Añade un nuevo estado
-                    <form onSubmit={this.handleSubmit}>
+                    <form>
                         <label>Fecha</label>
-                        <input type='date' onChange={this.handleDate} />
+                        <input type='date' name='date' onChange={this.handleInput} />
                         <label>Estado</label>
-                        <input type='checkbox' name='estado' value='feliz' onChange={this.handleState} /> :)
-                        <input type='checkbox' name='estado' value='triste' onChange={this.handleState} /> :(
+                        <input type='checkbox' name='status' value='feliz' onChange={this.handleInput} /> :)
+                        <input type='checkbox' name='status' value='triste' onChange={this.handleInput} /> :(
                     <label>Mensaje</label>
-                        <input type='text-area' placeholder='¿Por qué ha sido un buen dia?' onChange={this.handleMessage} />
+                        <input type='text-area' name='message' placeholder='¿Por qué ha sido un buen dia?' onChange={this.handleInput} />
                         <button className='input_submit' type='submit'>Añadir</button>
                         <Link to='/'>
                             <input type='button' value="Cancelar" />
