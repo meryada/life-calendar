@@ -37,8 +37,8 @@ class Editor extends React.Component {
                         <label>Fecha</label>
                         <input type='date' name='date' onChange={this.handleInput} />
                         <label>Estado</label>
-                        <input type='checkbox' name='status' value='feliz' onChange={this.handleInput} /> :)
-                        <input type='checkbox' name='status' value='triste' onChange={this.handleInput} /> :(
+                        <input type='radio' id='1' name='status' value='feliz' onChange={this.handleInput} /> :)
+                        <input type='radio' id='1' name='status' value='triste' onChange={this.handleInput} /> :(
                     <label>Mensaje</label>
                         <input type='text-area' name='message' placeholder='¿Por qué ha sido un buen dia?' onChange={this.handleInput} />
                         <button className='input_submit' type='submit' onClick={this.handleSubmit}>Añadir</button>

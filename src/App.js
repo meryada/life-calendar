@@ -6,9 +6,9 @@ import './App.css';
 
 const smileys = [
   {
-    date: 'Hoy',
-    status: 'feliz',
-    message: 'coding'
+    date: '',
+    status: '',
+    message: ''
   }
 ]
 
