@@ -4,22 +4,34 @@ import Editor from './components/Editor';
 import { Switch, Route } from 'react-router-dom';
 import './App.css';
 
+const smileys = [
+  {
+    date: 'Hoy',
+    status: 'feliz',
+    message: 'coding'
+  }
+]
+
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      smileys: [],
-      newSmiley: {}
+      smileys: smileys,
     }
   }
 
   render() {
+    console.log(this.state.smileys);
+    const { smileys } = this.state
     return (
+
       <div className="App">
-        <Switch>
-          <Route exact path='/' component={Home} />
-          <Route path='/editor' component={Editor} />
-        </Switch>
+
+        <Home
+          smileys={smileys}
+        />
+        <Editor />
+
       </div>
     );
   }

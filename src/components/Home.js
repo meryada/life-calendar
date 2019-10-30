@@ -1,19 +1,22 @@
 import React from 'react';
-import AddSmiley from './AddSmiley';
-import CalendarSmiley from './CalendarSmiley';
+import SmileyAdd from './SmileyAdd';
+import SmileyList from './SmileyList';
 import { Link } from 'react-router-dom';
 
 
 
 class Home extends React.Component {
 render() {
+    const {smileys} = this.props
     return(
         <div>
         <h1>soy home</h1>
         <Link to='/editor'>
-        <AddSmiley/>
+        <SmileyAdd/>
         </Link>
-        <CalendarSmiley/>
+        <SmileyList
+        smileys={smileys}
+        />
         </div>
     )
 }
