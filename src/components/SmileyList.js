@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class CalendarSmiley extends React.Component {
 
@@ -14,7 +15,9 @@ class CalendarSmiley extends React.Component {
                             return (
                                 <li key={index}>
                                     <p>{item.date}</p>
-                                    <p>{item.status === 'feliz' ? <i className="far fa-smile-beam"></i> : <i className="far fa-frown-open"></i>}</p>
+                                    <Link to="/detail">
+                                        <p>{item.status === 'feliz' ? <i className="far fa-smile-beam"></i> : <i className="far fa-frown-open"></i>}</p>
+                                    </Link>
                                     <p>{item.message}</p>
                                 </li>
                             )

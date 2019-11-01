@@ -25,6 +25,7 @@ class Editor extends React.Component {
     handleSubmit(event) {
         event.preventDefault();
         this.props.handleAddStatus(this.state)
+        alert('Se ha añadido correctamente el nuevo estado')
     }
 
 
@@ -41,10 +42,14 @@ class Editor extends React.Component {
                         <input type='radio' id='1' name='status' value='triste' onChange={this.handleInput} /> :(
                     <label>Mensaje</label>
                         <input type='text-area' name='message' placeholder='¿Por qué ha sido un buen dia?' onChange={this.handleInput} />
-                        <button className='input_submit' type='submit' onClick={this.handleSubmit}>Añadir</button>
+                        <input type='button' onClick={this.handleSubmit} value='Añadir'/>
                         <Link to='/'>
                             <input type='button' value="Cancelar" />
                         </Link>
+                        <Link to='/'>
+                            <input type='button' value='Volver al calendario'/>
+                        </Link>
+                        <button type='reset'>Limpiar el formulario</button>
                     </form>
                 </fieldset>
             </div>

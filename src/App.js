@@ -1,6 +1,7 @@
 import React from 'react';
 import Home from './components/Home';
 import Editor from './components/Editor';
+import SmileyDetail from './components/SmileyDetail';
 import { Switch, Route } from 'react-router-dom';
 import './App.css';
 
@@ -33,14 +34,23 @@ class App extends React.Component {
     return (
 
       <div className="App">
-
-        <Home
-          smileys={smileys}
-        />
-        <Editor 
-        handleAddStatus={this.handleAddStatus}
-        />
-
+        <Switch>
+          <Route exact path="/" render={() => {
+            return (
+              <Home 
+              smileys={smileys}
+              />
+            )
+          }}/>
+          <Route  path="/editor" render={() => {
+            return (
+              <Editor
+              handleAddStatus={this.handleAddStatus} 
+              />
+            )
+          }}/>
+          <Route path="/detail" component={SmileyDetail} />
+        </Switch>
       </div>
     );
   }
