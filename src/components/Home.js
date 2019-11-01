@@ -10,7 +10,7 @@ render() {
     const {smileys} = this.props
     return(
         <div>
-        <h1>soy home</h1>
+        <h1>Life Calendar</h1>
         <Link to='/editor'>
         <SmileyAdd/>
         </Link>

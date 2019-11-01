@@ -19,7 +19,7 @@ class App extends React.Component {
     this.state = {
       smileys: smileys,
     }
-    this.handleAddStatus=this.handleAddStatus.bind(this)
+    this.handleAddStatus = this.handleAddStatus.bind(this)
   }
 
   handleAddStatus(item) {
@@ -29,7 +29,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state.smileys);
     const { smileys } = this.state
     return (
 
@@ -37,19 +36,25 @@ class App extends React.Component {
         <Switch>
           <Route exact path="/" render={() => {
             return (
-              <Home 
-              smileys={smileys}
+              <Home
+                smileys={smileys}
               />
             )
-          }}/>
-          <Route  path="/editor" render={() => {
+          }} />
+          <Route path="/editor" render={() => {
             return (
               <Editor
-              handleAddStatus={this.handleAddStatus} 
+                handleAddStatus={this.handleAddStatus}
               />
             )
-          }}/>
-          <Route path="/detail" component={SmileyDetail} />
+          }} />
+          <Route path="/detail" render={(routerprops) => {
+            return (
+              <SmileyDetail
+                smileys={smileys}
+              />
+            )
+          }} />
         </Switch>
       </div>
     );

@@ -6,6 +6,7 @@ class Editor extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            index: 1,
             date: '',
             status: '',
             message:''
@@ -18,7 +19,7 @@ class Editor extends React.Component {
         const value = event.currentTarget.value;
         const name = event.currentTarget.name;
         this.setState({
-            [name]: value
+            [name]: value,
         })
     }
 
@@ -36,10 +37,10 @@ class Editor extends React.Component {
                 <fieldset>Añade un nuevo estado
                     <form>
                         <label>Fecha</label>
-                        <input type='date' name='date' onChange={this.handleInput} />
+                        <input type='date' name='date' onChange={this.handleInput} required />
                         <label>Estado</label>
                         <input type='radio' id='1' name='status' value='feliz' onChange={this.handleInput} /> :)
-                        <input type='radio' id='1' name='status' value='triste' onChange={this.handleInput} /> :(
+                        <input type='radio' id='1' name='status' value='triste' onChange={this.handleInput}/> :(
                     <label>Mensaje</label>
                         <input type='text-area' name='message' placeholder='¿Por qué ha sido un buen dia?' onChange={this.handleInput} />
                         <input type='button' onClick={this.handleSubmit} value='Añadir'/>

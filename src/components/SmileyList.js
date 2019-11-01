@@ -27,7 +27,10 @@ class CalendarSmiley extends React.Component {
             )
         } else {
             return (
+                <div>
+                <h2>calendario</h2>
                 <p>no hay ningún estado</p>
+                </div>
             )
         }
     }
